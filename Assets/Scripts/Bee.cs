@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class Bee : MonoBehaviour
 {
-    private Rigidbody _rb;
     
 
 
     public float moveSpeed = 10f;
     public float rotationSpeed = 5f;
-    private float _lockedZ;
     
+    private Rigidbody _rb;
     private Camera _mainCamera;
+    
+    private float _lockedZ;
+    private bool _isFlipped = false;
+
+    private const float flipThreshold = 90f;
+    private const float hyteresisBuffer = 10f;
 
     private void Awake()
     {
@@ -35,7 +40,31 @@ public class Bee : MonoBehaviour
     {
         Vector3 dir = targetPos - transform.position;
         
-        float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 180f);
+        float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 180f;
+
+        // if (!_isFlipped && angle > flipThreshold + hyteresisBuffer)
+        // {
+        //     _isFlipped = true;
+        // }
+        // else if (_isFlipped && angle < flipThreshold - hyteresisBuffer)
+        // {
+        //     _isFlipped = false;
+        // }
+        
+        //
+        //
+        // if (dir.x < 0) // Target is to the left.
+        // {
+        //     transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); // Flip to face left.
+        // }
+        // else // Target is to the right.
+        // {
+        //     transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z); // Default orientation.
+        // }
+        // transform.localScale = _isFlipped ? new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z)
+        //     : new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        
+        
         
         Quaternion q = Quaternion.Euler(0f, 0f, angle);
         _rb.MoveRotation(Quaternion.Lerp(transform.rotation, q, rotationSpeed * Time.fixedDeltaTime));
@@ -57,10 +86,5 @@ public class Bee : MonoBehaviour
         RotateTowards(targetPosition);
     }
 
-    // private Vector3 ProcessMovement()
-    // {
-    //     _targetPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-    //     _currentPosition = Vector3.MoveTowards(_currentPosition, _targetPosition, moveSpeed * Time.deltaTime);
-    //     return _currentPosition;
-    // }
+
 }
