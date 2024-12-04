@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5365235181726472570}
   - component: {fileID: 1989063587629276868}
   - component: {fileID: 251960585646709261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1010244377936117455}
   - component: {fileID: 7156288654924673721}
   - component: {fileID: 1445063208333406428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 754432183112826768}
   - component: {fileID: 1552661143780420795}
   - component: {fileID: 2743668283351123328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,9 +216,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891288306277529178}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.235, y: 10.9773655, z: -6.672938}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6931990957079818725}
@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  rotationSpeed: 5
 --- !u!54 &2743668283351123328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -262,8 +263,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -279,7 +280,7 @@ GameObject:
   - component: {fileID: 5375371849058758734}
   - component: {fileID: 398574729764808087}
   - component: {fileID: 7192091593199478597}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +384,7 @@ GameObject:
   - component: {fileID: 2622653092805509798}
   - component: {fileID: 4685910836224080248}
   - component: {fileID: 1364351093342163806}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
